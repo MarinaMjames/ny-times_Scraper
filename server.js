@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/week18day3mongoose");
+mongoose.connect("mongodb://heroku_hz6dn1zr:ikbauetepb47p1f2uin2krujkk@ds135963.mlab.com:35963/heroku_hz6dn1zr");
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -42,21 +42,6 @@ db.once("open", function() {
 // Main route (simple Hello World Message)
 app.get("/", function(req, res) {
   
-});
-
-// Retrieve data from the db
-app.get("/all", function(req, res) {
-  // Find all results from the scrapedData collection in the db
-  db.nyscraper.find({}, function(error, found) {
-    // Throw any errors to the console
-    if (error) {
-      console.log(error);
-    }
-    // If there are no errors, send the data to the browser as json
-    else {
-      res.json(found);
-    }
-  });
 });
 
 // Scrape data from one site and place it into the mongodb db
@@ -95,6 +80,20 @@ request("https://www.nytimes.com/", function(error, response, html) {
   res.send("Scrape Complete");
 });
 
+// This will get the articles we scraped from the mongoDB
+app.get("/articles", function(req, res) {
+  // Grab every doc in the Articles array
+  Article.find({}, function(error, doc) {
+    // Log any errors
+    if (error) {
+      console.log(error);
+    }
+    // Or send the doc to the browser as a json object
+    else {
+      res.json(doc);
+    }
+  });
+});
 
 // Listen on port 3000
 app.listen(3000, function() {
