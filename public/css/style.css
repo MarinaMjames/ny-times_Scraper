@@ -3,6 +3,10 @@
 /*IDs*/
 #navbar {
   background-color: gray;
+  margin-bottom: 30px;
+}
+#saveButton {
+  background-color: #808080;
 }
 /*Classes*/
 .jumbotron {
@@ -19,4 +23,11 @@
 .btn-default {
   background-color: transparent;
   border-color: transparent;
+}
+.panel-default>.panel-heading {
+  background-color: #d9534f;
+  color: white;
+}
+.panel {
+    margin-top: 10px;
 }

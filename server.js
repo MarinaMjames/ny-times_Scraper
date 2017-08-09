@@ -166,7 +166,7 @@ var collections = ["data"];
 // Hook mongojs configuration to the db variable
 var db = mongojs(databaseUrl, collections);
 db.on("error", function(error) {
-  console.log("Database Error:", error);
+  // console.log("Database Error:", error);
 });
 
 // Main route (simple Hello World Message)
@@ -180,7 +180,7 @@ app.get("/all", function(req, res) {
   db.nyscraper.find({}, function(error, found) {
     // Throw any errors to the console
     if (error) {
-      console.log(error);
+      // console.log(error);
     }
     // If there are no errors, send the data to the browser as json
     else {
@@ -211,11 +211,11 @@ request("https://www.nytimes.com/", function(error, response, html) {
         function(err, inserted) {
           if (err) {
             // Log the error if one is encountered during the query
-            console.log(err);
+            // console.log(err);
           }
           else {
             // Otherwise, log the inserted data
-            console.log(inserted);
+            // console.log(inserted);
           }
         });
       }
@@ -229,5 +229,5 @@ request("https://www.nytimes.com/", function(error, response, html) {
 
 // Listen on port 3000
 app.listen(3000, function() {
-  console.log("App running on port 3000!");
+  // console.log("App running on port 3000!");
 });

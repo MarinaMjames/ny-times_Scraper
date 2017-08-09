@@ -12,7 +12,7 @@ $("#scrape").on("click", function(){
 
     for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#scrapedArticles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+    $("#scrapedArticles").append("<div class='panel panel-default'><div class='panel-heading' data-id='" + data[i]._id + "'></div> <div class='panel-body'" + data[i].title + "><br>" + data[i].link + "<br><a type='button' class='btn btn-default' id='saveButton'>Save Article</a></div></div>");
     }
   });
 });
