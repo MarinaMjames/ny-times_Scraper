@@ -16,11 +16,23 @@
   <p>Get the latest news right here, right now!</p>
   </div>
 </div>
-
-      <div id="articles"></div>
-      <div id="notes"></div>
+<nav id="navbar">
+  <a href="/" type="button" class="btn btn-default">Home</a>
+  <a href="" type="button" class="btn btn-default">Saved Articles</a>
+  <a type="button" class="btn btn-danger" id="scrape">Scrape New Articles!</a>
+</nav>
+<!-- TO DO 
+      1. Create Scrape new Articles button
+      2. Create Home button
+      3. Create Saved Articles Button
+      4. Each Article needs a save button
+      5. Saved Articles need a Article Notes button- allows you to add a note - and delete article notes & Delete button -->
+      <div id="scrapedArticles"></div>
+      <div id="savedArticles"></div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="app.js"></script>
+
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
